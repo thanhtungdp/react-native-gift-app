@@ -6,13 +6,9 @@ import {autobind} from 'core-decorators';
 import {Actions} from 'react-native-router-flux';
 import Carousel from 'react-native-looped-carousel';
 import {addProduct} from '../../redux/actions/cartAction';
+import {addNotification} from '../../redux/actions/notificationAction';
 import {CustomView, Navbar, TextFont, Button} from '../../components';
-
-const carousels2 = [
-    'http://sv1.upsieutoc.com/2016/12/07/15562a.png',
-    'http://sv1.upsieutoc.com/2016/12/07/2ab635.png',
-    'http://sv1.upsieutoc.com/2016/12/07/3fdf04.png'
-]
+import {formatPrice} from '../../utils/cart';
 
 const {width} = Dimensions.get('window');
 
@@ -20,7 +16,7 @@ const CAROUSEL_HEIGHT = 250;
 
 @connect(
     (state) => ({}),
-    dispatch => bindActionCreators({addProduct}, dispatch)
+    dispatch => bindActionCreators({addProduct, addNotification}, dispatch)
 )
 export default class Product extends Component {
     static propTypes = {
@@ -42,6 +38,7 @@ export default class Product extends Component {
     handleAddCard(){
         Actions.pop();
         this.props.addProduct(this.props.product);
+        this.props.addNotification('success', `Add ${this.props.product.name} to cart`)
     }
 
     render() {
@@ -85,7 +82,7 @@ export default class Product extends Component {
                 </TextFont>
             </CustomView>
             <CustomView paddingLeft={21} paddingRight={21} paddingBottom={20}>
-                <Button onPress={this.handleAddCard} width="auto" gradient>{product.price} - Add to cart</Button>
+                <Button onPress={this.handleAddCard} width="auto" gradient>{formatPrice(parseInt(product.price))} - Add to cart</Button>
             </CustomView>
         </CustomView>
     }

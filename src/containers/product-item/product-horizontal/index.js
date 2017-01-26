@@ -2,6 +2,7 @@ import React, {PureComponent, PropTypes} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {CustomView, TextFont, Button} from '../../../components';
+import {formatPrice} from '../../../utils/cart';
 
 export default class ProductHorizontal extends PureComponent {
     state = {
@@ -28,7 +29,7 @@ export default class ProductHorizontal extends PureComponent {
                 <CustomView width={50} height={50} resizeMode="cover" component={Image} source={{uri: featuredImage}}/>
                 <CustomView flex={1} alignItems={this.props.alignLeft ? 'flex-start' : 'flex-end'} paddingLeft={20}>
                     <TextFont fontSize={16}>{name}</TextFont>
-                    <TextFont color="#7c7c7c"><Icon name="usd"/> {price}</TextFont>
+                    <TextFont color="#7c7c7c"><Icon name="usd"/> {formatPrice(parseInt(price))}</TextFont>
                     {this.props.showDelete &&
                     <Button onPress={this.props.onDelete} width={45} paddingTop={2} paddingBottom={2}>
                         <TextFont fontSize={10}>

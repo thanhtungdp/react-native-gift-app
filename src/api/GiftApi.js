@@ -37,7 +37,7 @@ export function getCategories() {
 export function getProducts(categoryId) {
     const products = [
         {
-            _id: 1, name: 'Bánh nhân đậu xanh sửa',
+            _id: 1, name: 'Seven color cupcake',
             featuredImage: 'http://sv1.upsieutoc.com/2016/12/10/cake-1.png',
             featuredImageGroup: [
                 {originalUrl: 'http://sv1.upsieutoc.com/2016/12/07/15562a.png'},
@@ -47,7 +47,7 @@ export function getProducts(categoryId) {
             price: 3000
         },
         {
-            _id: 2, name: 'Gấu teddy beer',
+            _id: 2, name: 'Socola love bakery',
             featuredImage: 'http://sv1.upsieutoc.com/2016/12/10/cake-2.png',
             featuredImageGroup: [
                 {originalUrl: 'http://sv1.upsieutoc.com/2016/12/07/15562a.png'},
@@ -57,12 +57,31 @@ export function getProducts(categoryId) {
             price: 3000
         },
         {
-            _id: 3, name: 'Socola đậu phộng',
+            _id: 3, name: 'Teddy beer beautiful',
             featuredImage: 'http://sv1.upsieutoc.com/2016/12/10/cake-3.png',
             featuredImageGroup: [
                 {originalUrl: 'http://sv1.upsieutoc.com/2016/12/07/15562a.png'},
                 {originalUrl: 'http://sv1.upsieutoc.com/2016/12/07/2ab635.png'},
                 {originalUrl: 'http://sv1.upsieutoc.com/2016/12/07/3fdf04.png'},
+            ],
+            price: 3000
+        },
+        {
+            _id: '3.1', name: 'Taylor Swift candy sing',
+            featuredImage: 'http://sv1.upsieutoc.com/2016/12/17/taylor.jpg',
+            featuredImageGroup: [
+                {originalUrl: 'http://sv1.upsieutoc.com/2016/12/17/taylor-1.jpg'},
+                {originalUrl: 'http://sv1.upsieutoc.com/2016/12/17/taylor-2.jpg'},
+                {originalUrl: 'http://sv1.upsieutoc.com/2016/12/17/taylor-3.jpg'},
+            ],
+            price: 3000
+        },
+        {
+            _id: '3.2', name: 'Maria Ozawa cute',
+            featuredImage: 'http://sv1.upsieutoc.com/2016/12/17/maria.jpg',
+            featuredImageGroup: [
+                {originalUrl: 'http://sv1.upsieutoc.com/2016/12/17/maria-1.jpg'},
+                {originalUrl: 'http://sv1.upsieutoc.com/2016/12/17/maria-2.jpg'},
             ],
             price: 3000
         },

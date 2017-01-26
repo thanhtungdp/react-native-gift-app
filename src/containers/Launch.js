@@ -48,58 +48,34 @@ export default class Launch extends Component {
         const {type, token} = await Facebook.logInWithReadPermissionsAsync(FACEBOOK_APP_ID, {
             permissions: ['public_profile', 'email']
         });
-        if(type === 'success'){
+        if (type === 'success') {
             this.setState({loginStatus: LOGIN_PENDING});
             const userRes = await AuthApi.authLogin(token);
             this.updateUser(userRes, userRes.token, userRes.user)
         }
     }
 
-    handleToCategoryLists(){
+    handleToCategoryLists() {
         Actions.categoryLists();
     }
 
-    updateUser(userRes, token, user){
-        if(userRes.success === false){
+    updateUser(userRes, token, user) {
+        if (userRes.success === false) {
             this.setState({loginStatus: LOGIN_FAIL})
-        }else{
+        } else {
             this.setState({loginStatus: LOGIN_SUCCESS});
             this.props.authUpdateToken(token, user);
         }
     }
 
-    async getUserMe(){
+    async getUserMe() {
         this.setState({loginStatus: LOGIN_PENDING});
         const userRes = await AuthApi.getUserMe();
         this.updateUser(userRes, userRes.token, userRes);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getUserMe();
-    }
-
-    renderButtonLogin(){
-        const {auth:{user}} = this.props;
-        let componentDisplay = null;
-        switch (this.state.loginStatus){
-            case LOGIN_PENDING:
-                componentDisplay = <ActivityIndicator/>;
-                break;
-            case LOGIN_SUCCESS:
-                componentDisplay = <Button onPress={this.handleToCategoryLists}>
-                    Hello {user.fullName} {'\n'} <Icon name="gift"/> Tap to give gift
-                </Button>
-                break;
-            default:
-                componentDisplay = <Button  onPress={this.handleLoginFacebook}>
-                    <Icon name="facebook"/> Login with facebook
-                </Button>
-        }
-        return <CustomView marginTop={64} flexDirection="column" alignItems="center">
-            {componentDisplay}
-            {this.state.loginStatus === LOGIN_FAIL && <TextFont marginTop={5}>Đăng nhập thất bại, vui lòng đăng nhập lại</TextFont>}
-            {this.state.loginStatus === LOGIN_PENDING && <TextFont marginTop={5}>Các bạn chờ trong giây lát nhé ^_^</TextFont>}
-        </CustomView>
     }
 
     render() {
@@ -112,7 +88,8 @@ export default class Launch extends Component {
             <Animatable.View animation="pulse" easing="ease-out" duration={4000} iterationCount="infinite">
                 <Flower/>
             </Animatable.View>
-            <Animatable.View style={{marginTop: 124}} animation="shake" easing="ease-in" duration={15000} iterationCount="infinite">
+            <Animatable.View style={{marginTop: 124}} animation="shake" easing="ease-in" duration={15000}
+                             iterationCount="infinite">
                 <Logo/>
             </Animatable.View>
             <CustomView alignItems="center">
@@ -131,7 +108,11 @@ export default class Launch extends Component {
                     </TextFont>
                 </Animatable.Text>
             </CustomView>
-            {this.renderButtonLogin()}
+            <CustomView marginTop={64} flexDirection="column" alignItems="center">
+                <Button onPress={this.handleToCategoryLists}>
+                    Hello {'\n'} <Icon name="gift"/> Tap to give gift
+                </Button>
+            </CustomView>
             <CustomView
                 position="absolute"
                 left={0}

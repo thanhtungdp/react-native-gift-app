@@ -8,13 +8,13 @@ export default class ThankYou extends Component {
             logoStyle.imageContainer,
             getStyleFromProps(['marginTop'], this.props)
         ]
-        return <View style={style}>
-            <Image source={require('../../../assets/images/thank-you.png')} style={logoStyle.image} resizeMode="cover"/>
-        </View>
+        return <View style={style}></View>
     }
 }
 
 /*
+ <Image source={require('../../../assets/images/thank-you.png')} style={logoStyle.image} resizeMode="cover"/>
+
  */
 
 ThankYou.propTypes = {

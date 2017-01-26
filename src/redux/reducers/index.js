@@ -7,6 +7,7 @@ import category from './category';
 import product from './product';
 import cart from './cart';
 import order from './order';
+import notification from './notification';
 
 export default combineReducers({
     form: formReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
     category,
     product,
     cart,
-    order
+    order,
+    notification
 })

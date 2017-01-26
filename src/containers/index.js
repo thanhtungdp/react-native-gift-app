@@ -10,13 +10,14 @@ import Checkout from './checkout';
 import CheckoutSuccess from './checkout-success';
 import OrderLists from './order-lists';
 import OrderView from './order-view';
+import NotificationToast from './notification-toast';
 
 export {
     Launch, CategoryLists, CategoryProducts, ProductView,
     ReceiverInfo, ReceiverMessage,
     SummaryInfo, SummaryCart,
     Checkout, CheckoutSuccess,
-    OrderLists, OrderView
+    OrderLists, OrderView, NotificationToast
 }
 
 export default {
@@ -24,5 +25,5 @@ export default {
     ReceiverInfo, ReceiverMessage,
     SummaryInfo, SummaryCart,
     Checkout, CheckoutSuccess,
-    OrderLists, OrderView
+    OrderLists, OrderView, NotificationToast
 }

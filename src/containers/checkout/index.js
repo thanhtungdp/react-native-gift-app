@@ -26,7 +26,7 @@ export default class Checkout extends Component {
 
     renderNavbar() {
         return <Navbar>
-            4. Thanh toán
+            4. Checkout
         </Navbar>
     }
 
@@ -51,7 +51,7 @@ export default class Checkout extends Component {
                     </CustomView>
                 </CustomView>
                 <Button marginTop={30} onPress={this.handleCheckoutSuccess} gradient width="auto">
-                    <Icon name="cc-visa"/> Thanh toán qua VISA
+                    <Icon name="cc-visa"/> Checkout by VISA
                 </Button>
             </CustomView>
         </CustomView>

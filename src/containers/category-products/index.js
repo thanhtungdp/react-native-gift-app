@@ -10,6 +10,7 @@ import {CustomView, BackgroundWrapper} from '../../components';
 import CategoryHeaderParallax from './category-header-parallax';
 import {ProductVertical as ProductItem} from '../product-item';
 import {addProduct} from '../../redux/actions/cartAction';
+import {addNotification} from '../../redux/actions/notificationAction';
 
 const window = Dimensions.get('window');
 
@@ -17,7 +18,7 @@ const MAX_ITEMS_FIRST_LOAD = 4
 
 @connect((state) => ({
     products: state.product.lists.data
-}), dispatch => bindActionCreators({addProduct}, dispatch))
+}), dispatch => bindActionCreators({addProduct, addNotification}, dispatch))
 export default class CategoryProducts extends Component {
     state = {
         rendered: true,
@@ -59,6 +60,7 @@ export default class CategoryProducts extends Component {
     }
 
     handleAddProduct(product){
+        this.props.addNotification('success', `Add ${product.name} to cart`)
         this.props.addProduct(product);
     }
 
