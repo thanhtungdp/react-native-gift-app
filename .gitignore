@@ -2,3 +2,4 @@ node_modules/**/*
 .exponent/*
 npm-debug.*
 .idea
+.DS_Store
