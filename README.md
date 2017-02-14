@@ -14,11 +14,11 @@ My protoype design in sketch (Sketch is awesome, i have attachmented bellow)
 
 # Demo
 
-Demo in Exponent App Real Device: [Get app](https://getexponent.com/@thanhtungdp/GiftApp)
+Demo in Exponent App Real Device: [Get app: https://getexponent.com/@thanhtungdp/GiftApp](https://getexponent.com/@thanhtungdp/GiftApp)
 
-Demo and click on image if you want view [video](https://youtu.be/rWWZENNhh6M):
+Demo and click on image if you want view [video](https://www.youtube.com/watch?v=ebtseCuZaL8):
 
-[![Image](https://cloud.githubusercontent.com/assets/4653102/22923674/fdc76354-f2d4-11e6-8b37-7b61b7aadf1f.gif)](https://youtu.be/rWWZENNhh6M)
+[![Image](https://cloud.githubusercontent.com/assets/4653102/22923674/fdc76354-f2d4-11e6-8b37-7b61b7aadf1f.gif)](https://www.youtube.com/watch?v=ebtseCuZaL8)
 
 # Design Resoruces
 You can download prototype design from [here](https://www.dropbox.com/sh/0msakno7gzvytd7/AABTyo3RgT382DJ3msP0G1NHa?dl=0) (Sketch file)
@@ -46,7 +46,7 @@ npm install
 Coming soon...
 
 # Ecosystem flow
-![Image](https://scontent.fsgn2-2.fna.fbcdn.net/t31.0-8/15156857_1186222478130869_1406581156623831552_o.jpg)
+![Image](http://sv1.upsieutoc.com/2017/02/14/giftapptechonologystack.jpg)
 
 # Packages
 - [React native router flux](https://github.com/aksonov/react-native-router-flux) navigate scence easy
