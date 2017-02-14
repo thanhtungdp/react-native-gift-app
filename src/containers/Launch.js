@@ -1,21 +1,13 @@
 import React, {Component} from 'react';
 import {Alert, ActivityIndicator} from 'react-native';
-import {autobind} from 'core-decorators';
 import {bindActionCreators} from 'redux';
-import {Facebook} from 'exponent';
 import {Actions} from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Animatable from 'react-native-animatable';
 import {CustomView, Logo, Flower, TextFont, Button, BackgroundWrapper} from '../components';
 import {reduxAwait} from '../utils';
 import {getPlatformValue} from '../utils';
-import {FACEBOOK_APP_ID} from '../config';
-import {AuthApi} from '../api';
 import {authAction} from '../redux/actions';
-
-const LOGIN_PENDING = 'login peding';
-const LOGIN_FAIL = 'login fail';
-const LOGIN_SUCCESS = 'login success';
 
 Animatable.initializeRegistryWithDefinitions({
     pulseBig: {
@@ -30,8 +22,6 @@ Animatable.initializeRegistryWithDefinitions({
         },
     }
 })
-const TextFontAnimate = Animatable.createAnimatableComponent(TextFont);
-const FlowerAnimate = Animatable.createAnimatableComponent(Flower);
 
 @reduxAwait(state => {
     return {
@@ -39,43 +29,8 @@ const FlowerAnimate = Animatable.createAnimatableComponent(Flower);
     }
 }, dispatch => bindActionCreators(authAction, dispatch))
 export default class Launch extends Component {
-    state = {
-        loginStatus: LOGIN_PENDING
-    }
-
-    @autobind
-    async handleLoginFacebook() {
-        const {type, token} = await Facebook.logInWithReadPermissionsAsync(FACEBOOK_APP_ID, {
-            permissions: ['public_profile', 'email']
-        });
-        if (type === 'success') {
-            this.setState({loginStatus: LOGIN_PENDING});
-            const userRes = await AuthApi.authLogin(token);
-            this.updateUser(userRes, userRes.token, userRes.user)
-        }
-    }
-
     handleToCategoryLists() {
         Actions.categoryLists();
-    }
-
-    updateUser(userRes, token, user) {
-        if (userRes.success === false) {
-            this.setState({loginStatus: LOGIN_FAIL})
-        } else {
-            this.setState({loginStatus: LOGIN_SUCCESS});
-            this.props.authUpdateToken(token, user);
-        }
-    }
-
-    async getUserMe() {
-        this.setState({loginStatus: LOGIN_PENDING});
-        const userRes = await AuthApi.getUserMe();
-        this.updateUser(userRes, userRes.token, userRes);
-    }
-
-    componentDidMount() {
-        this.getUserMe();
     }
 
     render() {

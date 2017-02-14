@@ -8,20 +8,6 @@ import {
     OrderLists, OrderView
 } from './containers';
 
-const getScenceStyle = (scene) => {
-    let style = {backgroundColor: 'transparent'};
-    if (scene.navigationState.index !== scene.scene.index) {
-        style = {
-            ...style,
-            opacity: 0
-        }
-    }
-    return style;
-    return {
-        backgroundColor: 'transparent'
-    }
-}
-
 export default class App extends Component {
     render() {
         return <Router>
