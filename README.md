@@ -1,15 +1,27 @@
-# Gift App
-This app use `Animated` for animation transition from other `Scence`, it's easy and build fast. You should learn it.
+# Gift App For Love introduction
+
+Happy valentine day.
+
+On holiday, sometime i forget a gift for my love, my family, my friend or i don't know how to choose a gift for them. So, i have idea "Gift App". It's help you easy choose a gift, and shipping to them.
+It haven't business model. This only a small beautiful app.
+
+# About Technology
+
+This app build with React Native + Exponent.
+My protoype design in sketch (Sketch is awesome, i have attachmented bellow)
+
 > Simple, clean, easy learn
 
-Demo in Exponent App Real Device: [Get app](https://getexponent.com/@thanhtungdp/login-animated-app)
+# Demo
+
+Demo in Exponent App Real Device: [Get app](https://getexponent.com/@thanhtungdp/GiftApp)
 
 Demo and click on image if you want view [video](https://youtu.be/rWWZENNhh6M):
 
-[![Image](https://cloud.githubusercontent.com/assets/4653102/20638502/83c8713e-b3db-11e6-9814-0c062ffbc675.gif)](https://youtu.be/rWWZENNhh6M)
+[![Image](https://cloud.githubusercontent.com/assets/4653102/22923674/fdc76354-f2d4-11e6-8b37-7b61b7aadf1f.gif)](https://youtu.be/rWWZENNhh6M)
 
 # Design Resoruces
-You can download prototype design from [here](https://www.dropbox.com/sh/ckvxavfpmojz2gi/AACltbx0qM8w2YSANVUvw1_ma?dl=0) (Sketch file + Flinto file + Releway Fonts)
+You can download prototype design from [here](https://www.dropbox.com/sh/0msakno7gzvytd7/AABTyo3RgT382DJ3msP0G1NHa?dl=0) (Sketch file)
 
 # Note
 My design on `iPhone 6 size`, if you run other iphone 5,4 or android size < 320pdi, style doesn't show good.
@@ -25,7 +37,7 @@ It run good on:
 
 # Installation
 ```
-git clone https://github.com/thanhtungdp/react-native-login-animated
+git clone https://github.com/thanhtungdp/react-native-gift-app
 npm install
 // Open project with Exponent and run it
 ```
