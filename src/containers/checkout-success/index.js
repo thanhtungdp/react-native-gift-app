@@ -15,6 +15,7 @@ export default class CheckoutSuccess extends Component {
         textAnimate: new Animated.Value(0),
         flowerAnimate: new Animated.Value(0)
     }
+
     @autobind
     handleToCategory() {
         Actions.popTo('categoryLists', {title: 'Category'});

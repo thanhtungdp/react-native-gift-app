@@ -23,25 +23,20 @@ Animatable.initializeRegistryWithDefinitions({
     }
 })
 
-@reduxAwait(state => {
-    return {
-        auth: state.auth
-    }
-}, dispatch => bindActionCreators(authAction, dispatch))
 export default class Launch extends Component {
     handleToCategoryLists() {
         Actions.categoryLists();
     }
 
-    render() {
+    render2() {
         return <CustomView flex={1} backgroundColor="transparent">
             <CustomView position="absolute" top={0} left={0} right={0} bottom={0}>
                 <Animatable.View animation="pulseBig" easing="ease-out" duration={4000} iterationCount="infinite">
-                    <BackgroundWrapper/>
+                <BackgroundWrapper/>
                 </Animatable.View>
             </CustomView>
             <Animatable.View animation="pulse" easing="ease-out" duration={4000} iterationCount="infinite">
-                <Flower/>
+            <Flower/>
             </Animatable.View>
             <Animatable.View style={{marginTop: 124}} animation="shake" easing="ease-in" duration={15000}
                              iterationCount="infinite">
